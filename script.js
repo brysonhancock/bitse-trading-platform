@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Script loaded and DOM ready");
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script loaded and DOM fully ready.");
 
     const loginForm = document.getElementById("loginForm");
 
@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    loginForm.addEventListener("submit", function(event) {
+    loginForm.addEventListener("submit", function (event) {
         event.preventDefault();
-        console.log("Login button clicked");
+        console.log("Login button clicked!");
 
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value.trim();
@@ -18,11 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Entered Email:", email);
         console.log("Entered Password:", password);
 
+        // Dummy credentials for testing
         if (email === "user@bitse.com" && password === "password123") {
             alert("Login successful!");
-            window.location.href = "dashboard.html";
+            window.location.href = "/dashboard.html";  // Redirect to dashboard
         } else {
-            console.log("Invalid credentials");
+            console.log("Invalid credentials.");
             document.getElementById("errorMessage").style.display = "block";
         }
     });
