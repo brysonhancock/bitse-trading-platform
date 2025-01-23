@@ -1,0 +1,31 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000033;
+    color: #ff0000;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 50px;
+    border: 2px solid #ff0000;
+    margin: 100px auto;
+    width: 50%;
+    background-color: #001133;
+}
+
+button {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button:hover {
+    background-color: #ff6600;
+}
