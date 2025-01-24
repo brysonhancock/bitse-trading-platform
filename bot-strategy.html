@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading Bot Strategy - Bitse Brokerage Holdings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas class="matrix"></canvas>
+    <div class="container">
+        <h1>Trading Bot Strategy</h1>
+
+        <form id="strategyForm">
+            <label for="amount">Investment Amount ($):</label>
+            <input type="number" id="amount" placeholder="Enter amount" required>
+
+            <label for="risk">Risk Tolerance (1-100%):</label>
+            <input type="number" id="risk" placeholder="Enter risk tolerance" min="1" max="100" required>
+
+            <label for="target">Desired Outcome ($):</label>
+            <input type="number" id="target" placeholder="Enter target outcome" required>
+
+            <button type="submit">Generate Strategy</button>
+        </form>
+
+        <div id="strategyOutput"></div>
+
+        <button onclick="window.location.href='index.html'">Back to Home</button>
+    </div>
+
+    <script>
+        const canvas = document.querySelector('.matrix');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const letters = "01";
+        const matrix = letters.split('');
+
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const drops = Array.from({ length: columns }).fill(1);
+
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = '#00ff00';
+            ctx.font = `${fontSize}px monospace`;
+
+            drops.forEach((y, i) => {
+                const text = matrix[Math.floor(Math.random() * matrix.length)];
+                ctx.fillText(text, i * fontSize, y * fontSize);
+
+                if (y * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            });
+        }
+
+        setInterval(drawMatrix, 50);
+
+        document.getElementById('strategyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const amount = document.getElementById('amount').value;
+            const risk = document.getElementById('risk').value;
+            const target = document.getElementById('target').value;
+
+            const mockStrategy = [
+                `1. Allocate ${risk}% to high-risk assets.`,
+                `2. Allocate ${100 - risk}% to stable assets.`,
+                `3. Set stop-loss at ${(amount * (risk / 100)).toFixed(2)}.`,
+                `4. Take profit at ${target}.`,
+                `5. Review portfolio weekly.`
+            ];
+
+            document.getElementById('strategyOutput').innerHTML = `
+                <h2>Your 5-Point Strategy:</h2>
+                <ul>
+                    ${mockStrategy.map(step => `<li>${step}</li>`).join('')}
+                </ul>
+            `;
+        });
+    </script>
+</body>
+</html>
+
