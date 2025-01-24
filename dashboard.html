@@ -13,8 +13,17 @@
         }
         .container {
             margin-top: 50px;
+            border: 2px solid red;
+            background-color: #001f3f;
+            padding: 20px;
+            display: inline-block;
+        }
+        .logo {
+            font-size: 50px;
+            color: #ffcc00;
         }
         .btn-container {
+            margin-top: 20px;
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -36,9 +45,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome, Test User</h1>
-        <p>Your account balance: $10,000</p>
+        <h1 style="color: red;">Bitse Brokerage Holdings</h1>
+        <div class="logo">B</div>
         <div class="btn-container">
+            <a href="signup.html" class="btn">Sign Up</a>
+            <a href="login.html" class="btn">Login</a>
             <a href="bot-strategy.html" class="btn">BOT</a>
             <a href="charts.html" class="btn">CHARTS</a>
             <a href="logout.html" class="btn">Logout</a>
