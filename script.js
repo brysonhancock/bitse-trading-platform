@@ -1,30 +1,37 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Script loaded and DOM fully ready.");
 
-    const loginForm = document.getElementById("loginForm");
-
-    if (!loginForm) {
-        console.error("Login form not found!");
-        return;
+    // Handle CHART button click
+    const chartBtn = document.getElementById("chartBtn");
+    if (chartBtn) {
+        chartBtn.addEventListener("click", function () {
+            console.log("CHART button clicked!");
+            window.location.href = "/chart.html";  // Redirect to chart page
+        });
+    } else {
+        console.error("CHART button not found!");
     }
 
-    loginForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        console.log("Login button clicked!");
+    // Handle BOT button click
+    const botBtn = document.getElementById("botBtn");
+    if (botBtn) {
+        botBtn.addEventListener("click", function () {
+            console.log("BOT button clicked!");
+            window.location.href = "/bot-strategy.html";  // Redirect to bot strategy page
+        });
+    } else {
+        console.error("BOT button not found!");
+    }
 
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value.trim();
-
-        console.log("Entered Email:", email);
-        console.log("Entered Password:", password);
-
-        // Dummy credentials for testing
-        if (email === "user@bitse.com" && password === "password123") {
-            alert("Login successful!");
-            window.location.href = "/dashboard.html";  // Redirect to dashboard
-        } else {
-            console.log("Invalid credentials.");
-            document.getElementById("errorMessage").style.display = "block";
-        }
-    });
+    // Handle LOGOUT button click
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", function () {
+            console.log("LOGOUT button clicked!");
+            alert("You have been logged out.");
+            window.location.href = "/login.html";  // Redirect to login page
+        });
+    } else {
+        console.error("LOGOUT button not found!");
+    }
 });
