@@ -2,54 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #000;
-            color: #fff;
-        }
-        .container {
-            margin-top: 50px;
-            border: 2px solid red;
-            background-color: #001f3f;
-            padding: 20px;
-            display: inline-block;
-        }
-        .logo {
-            font-size: 50px;
-            color: #ffcc00;
-        }
-        .btn-container {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .btn {
-            padding: 15px 30px;
-            font-size: 18px;
-            color: #fff;
-            background-color: #ff0000;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .btn:hover {
-            background-color: #cc0000;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="logo">BITSE</div>
-        <div class="btn-container">
-            <button id="chartBtn" class="btn">CHART</button>
-            <button id="botBtn" class="btn">BOT</button>
-            <button id="logoutBtn" class="btn">LOGOUT</button>
+
+    <!-- Navigation Bar -->
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Dashboard</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#" role="button">BOT</a></li>
+            <li><a href="#" role="button">Charts</a></li>
+            <li><a href="#" role="button">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="grid">
+            <section>
+                <hgroup>
+                    <h2>Welcome to Your Dashboard</h2>
+                    <h3>Manage your data and insights here</h3>
+                </hgroup>
+                <p>Use the navigation buttons above to access the bot and charts.</p>
+            </section>
         </div>
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="container">
+        <small><a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a></small>
+    </footer>
+
 </body>
 </html>
