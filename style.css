@@ -26,10 +26,14 @@ body {
     padding: 20px;
     border: 1px solid #00ff00;
     background-color: rgba(0, 0, 0, 0.8);
-    max-width: 400px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
+}
+
+h2 {
+    color: #00ff00;
 }
 
 input, button {
@@ -48,4 +52,13 @@ button {
 button:hover {
     background-color: #00ff00;
     color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, input, button {
+    margin-bottom: 15px;
 }
