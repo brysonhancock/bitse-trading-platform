@@ -12,87 +12,29 @@
             font-family: 'Courier New', monospace;
             text-align: center;
             overflow: hidden;
-            margin: 0;
         }
         .matrix-header {
             font-size: 3rem;
             font-weight: bold;
-            text-shadow: 0 0 5px #00ff00;
+            text-shadow: 0 0 20px #00ff00;
             margin-top: 10vh;
-            position: relative;
-            z-index: 1;
+            animation: flicker 1.5s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { opacity: 0.8; }
+            100% { opacity: 1; }
         }
         .matrix-btn {
             background: none;
             border: 2px solid #00ff00;
             color: #00ff00;
             font-size: 1.2rem;
-            padding: 10px 20px;
-            font-family: 'Courier New', monospace;
-            text-transform: uppercase;
-            box-shadow: 0 0 5px #00ff00;
-            position: relative;
-            z-index: 1;
-        }
-        .matrix-btn:hover {
-            background: #00ff00;
-            color: #000;
-            box-shadow: 0 0 10px #00ff00;
-        }
-        .matrix-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: black;
-            overflow: hidden;
-        }
-        .matrix-bg canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="matrix-bg">
-        <canvas id="matrixCanvas"></canvas>
-    </div>
     <h1 class="matrix-header">Welcome to bitse brokerage holdings Trading Platform</h1>
-    <p>Experience the future of automated trading with our cutting-edge AI solutions.</p>
-    <button class="matrix-btn">Get Started</button>
-    <script>
-        const canvas = document.getElementById('matrixCanvas');
-        const ctx = canvas.getContext('2d');
-
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
-        const drops = Array(Math.floor(columns)).fill(1);
-
-        function drawMatrix() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#00ff00';
-            ctx.font = `${fontSize}px Courier New`;
-            for (let i = 0; i < drops.length; i++) {
-                const text = characters.charAt(Math.floor(Math.random() * characters.length));
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
-
-        setInterval(drawMatrix, 50);
-    </script>
+    <button class="matrix-btn" onclick="location.href='login.html'">Login</button>
+    <button class="matrix-btn" onclick="location.href='signup.html'">Sign Up</button>
 </body>
 </html>
