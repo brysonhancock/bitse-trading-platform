@@ -13,21 +13,23 @@
         <p>Your balance: <strong>$10,000</strong></p>
         <button onclick="window.location.href='index.html'">Logout</button>
         
-        <h2>Trading Bot Strategy</h2>
-        <form id="strategyForm">
-            <label for="amount">Investment Amount ($):</label>
-            <input type="number" id="amount" placeholder="Enter amount" required>
+        <div class="bot-section">
+            <h2>Trading Bot Strategy</h2>
+            <form id="strategyForm">
+                <label for="amount">Investment Amount ($):</label>
+                <input type="number" id="amount" placeholder="Enter amount" required>
 
-            <label for="risk">Risk Tolerance (1-100%):</label>
-            <input type="number" id="risk" placeholder="Enter risk tolerance" min="1" max="100" required>
+                <label for="risk">Risk Tolerance (1-100%):</label>
+                <input type="number" id="risk" placeholder="Enter risk tolerance" min="1" max="100" required>
 
-            <label for="target">Desired Outcome ($):</label>
-            <input type="number" id="target" placeholder="Enter target outcome" required>
+                <label for="target">Desired Outcome ($):</label>
+                <input type="number" id="target" placeholder="Enter target outcome" required>
 
-            <button type="submit">Generate Strategy</button>
-        </form>
+                <button type="submit">Generate Strategy</button>
+            </form>
 
-        <div id="strategyOutput"></div>
+            <div id="strategyOutput"></div>
+        </div>
     </div>
 
     <script>
