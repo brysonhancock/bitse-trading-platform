@@ -6,22 +6,19 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
-        /* Ensure all buttons have the same styling */
-        nav ul {
+        /* Center content vertically and horizontally */
+        .center-content {
             display: flex;
-            justify-content: flex-end;
-            gap: 1rem;
-        }
-
-        nav ul li {
-            list-style: none;
-        }
-
-        nav ul li a {
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
             text-align: center;
-            text-decoration: none;
+        }
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
         }
     </style>
 </head>
@@ -33,22 +30,18 @@
             <li><strong>Dashboard</strong></li>
         </ul>
         <ul>
-            <li><a href="#" class="contrast" role="button">BOT</a></li>
-            <li><a href="#" class="contrast" role="button">Charts</a></li>
-            <li><a href="#" class="contrast" role="button">Logout</a></li>
+            <li><a href="#" role="button">Logout</a></li>
         </ul>
     </nav>
 
     <!-- Main Content -->
-    <main class="container">
-        <div class="grid">
-            <section>
-                <hgroup>
-                    <h2>Welcome to Your Dashboard</h2>
-                    <h3>Manage your data and insights</h3>
-                </hgroup>
-                <p>Use the navigation buttons above to explore features.</p>
-            </section>
+    <main class="container center-content">
+        <h2>Welcome to Your Dashboard</h2>
+        <p>Select an option to continue:</p>
+
+        <div class="button-group">
+            <a href="#" role="button" class="contrast">BOT</a>
+            <a href="#" role="button" class="contrast">Charts</a>
         </div>
     </main>
 
@@ -58,4 +51,4 @@
     </footer>
 
 </body>
-</html>
+</html
