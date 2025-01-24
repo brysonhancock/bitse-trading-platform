@@ -3,52 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard</title>
+    <title>Dashboard - Matrix Trading</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Center content vertically and horizontally */
-        .center-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 80vh;
+        /* Matrix-Themed Styling */
+        body {
+            background-color: #000;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
             text-align: center;
+            overflow-x: hidden;
         }
-        .button-group {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
+        .matrix-header {
+            font-size: 2.5rem;
+            text-shadow: 0 0 20px #00ff00;
+            margin-top: 5vh;
+            animation: flicker 1.5s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        .dashboard-container {
+            margin-top: 5vh;
+        }
+        .matrix-btn {
+            background: none;
+            border: 2px solid #00ff00;
+            color: #00ff00;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            box-shadow: 0 0 10px #00ff00;
+        }
+        .matrix-btn:hover {
+            background-color: #00ff00;
+            color: #000;
+        }
+        .card {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid #00ff00;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 0 15px #00ff00;
+            margin: 1rem 0;
+        }
+        .matrix-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: url('https://i.imgur.com/aPZ6l1U.gif') repeat center center;
+            opacity: 0.2;
+            z-index: -1;
         }
     </style>
 </head>
 <body>
 
+    <!-- Matrix background effect -->
+    <div class="matrix-bg"></div>
+
     <!-- Navigation Bar -->
     <nav class="container-fluid">
         <ul>
-            <li><strong>Dashboard</strong></li>
+            <li><strong>Matrix Dashboard</strong></li>
         </ul>
         <ul>
-            <li><a href="#" role="button">Logout</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#" role="button" class="matrix-btn">Logout</a></li>
         </ul>
     </nav>
 
-    <!-- Main Content -->
-    <main class="container center-content">
-        <h2>Welcome to Your Dashboard</h2>
-        <p>Select an option to continue:</p>
+    <!-- Main Dashboard Content -->
+    <main class="container dashboard-container">
+        <h1 class="matrix-header">Welcome to the Dashboard</h1>
+        <p>Manage your trading data and bots below.</p>
 
-        <div class="button-group">
-            <a href="#" role="button" class="contrast">BOT</a>
-            <a href="#" role="button" class="contrast">Charts</a>
+        <div class="grid">
+            <div class="card">
+                <h2>Trading Bots</h2>
+                <p>Monitor and control your automated trading bots.</p>
+                <a href="#" class="matrix-btn">Manage Bots</a>
+            </div>
+
+            <div class="card">
+                <h2>Trading Charts</h2>
+                <p>Analyze market trends with real-time data.</p>
+                <a href="#" class="matrix-btn">View Charts</a>
+            </div>
         </div>
     </main>
 
     <!-- Footer -->
     <footer class="container">
-        <small><a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a></small>
+        <small>© 2025 Matrix Corporation. All rights reserved.</small>
     </footer>
 
 </body>
-</html
+</html>
